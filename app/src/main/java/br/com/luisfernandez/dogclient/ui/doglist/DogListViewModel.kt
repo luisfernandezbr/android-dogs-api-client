@@ -8,7 +8,7 @@ import br.com.luisfernandez.dogclient.pojo.Dog
 
 class DogListViewModel : ViewModel() {
 
-    val dogListLiveData: MutableLiveData<List<Dog>> = MutableLiveData()
+    private val dogListLiveData: MutableLiveData<List<Dog>> = MutableLiveData()
 
     fun loadDogList(): LiveData<List<Dog>> {
         dogListLiveData.value = DogModelImpl().loadDogList()
