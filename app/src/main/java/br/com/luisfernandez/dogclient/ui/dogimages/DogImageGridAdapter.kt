@@ -23,7 +23,6 @@ class DogImageGridAdapter: RecyclerView.Adapter<DogImageGridAdapter.DogImageGrid
         val dog = dogImageList[position]
         Picasso.get()
                 .load(dog.imageUrl)
-                .resize(50, 50)
                 .into(holder.imageDog)
     }
 
