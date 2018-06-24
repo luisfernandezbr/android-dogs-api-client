@@ -1,10 +1,11 @@
-package br.com.luisfernandez.dogclient
+package br.com.luisfernandez.dogclient.ui.doglist
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import br.com.luisfernandez.dogclient.R
 import br.com.luisfernandez.dogclient.pojo.Dog
 import java.util.ArrayList
 

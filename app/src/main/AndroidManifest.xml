@@ -11,11 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="br.com.luisfernandez.dogclient.DogListActivity">
+        <activity android:name="br.com.luisfernandez.dogclient.activity.DogListActivity">
 
         </activity>
 
-        <activity android:name="br.com.luisfernandez.dogclient.DogImageGridActivity">
+        <activity android:name="br.com.luisfernandez.dogclient.activity.DogImageGridActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

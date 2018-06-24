@@ -1,9 +1,9 @@
-package br.com.luisfernandez.dogclient
+package br.com.luisfernandez.dogclient.activity
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import br.com.luisfernandez.dogclient.R
 import br.com.luisfernandez.dogclient.ui.dogimages.DogImageGridFragment
-import br.com.luisfernandez.dogclient.ui.doglist.DogListFragment
 
 class DogImageGridActivity : AppCompatActivity() {
 
@@ -16,5 +16,4 @@ class DogImageGridActivity : AppCompatActivity() {
                     .commitNow()
         }
     }
-
 }
