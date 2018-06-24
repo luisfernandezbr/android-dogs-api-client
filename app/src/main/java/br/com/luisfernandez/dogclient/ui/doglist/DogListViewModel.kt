@@ -1,4 +1,4 @@
-package br.com.luisfernandez.android_dog_api_client.ui.doglist
+package br.com.luisfernandez.dogclient.ui.doglist
 
 import android.arch.lifecycle.ViewModel
 

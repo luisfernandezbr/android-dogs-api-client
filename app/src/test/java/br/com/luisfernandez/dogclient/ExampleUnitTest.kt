@@ -1,4 +1,4 @@
-package br.com.luisfernandez.android_dog_api_client
+package br.com.luisfernandez.dogclient
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package br.com.luisfernandez.android_dog_api_client.ui.doglist
+package br.com.luisfernandez.dogclient.ui.doglist
 
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -6,7 +6,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import br.com.luisfernandez.android_dog_api_client.R
+import br.com.luisfernandez.dogclient.R
 
 class DogListFragment : Fragment() {
 

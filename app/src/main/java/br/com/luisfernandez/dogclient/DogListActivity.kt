@@ -1,8 +1,8 @@
-package br.com.luisfernandez.android_dog_api_client
+package br.com.luisfernandez.dogclient
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import br.com.luisfernandez.android_dog_api_client.ui.doglist.DogListFragment
+import br.com.luisfernandez.dogclient.ui.doglist.DogListFragment
 
 class DogListActivity : AppCompatActivity() {
 
