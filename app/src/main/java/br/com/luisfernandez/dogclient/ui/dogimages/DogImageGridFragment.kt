@@ -59,7 +59,7 @@ class DogImageGridFragment : Fragment() {
             }
         }
 
-        viewModel.loadDogImageList().observe(this, observer)
+        viewModel.loadDogImageList("beagle").observe(this, observer)
     }
 
     fun showContent(dogList: List<DogImage>) {

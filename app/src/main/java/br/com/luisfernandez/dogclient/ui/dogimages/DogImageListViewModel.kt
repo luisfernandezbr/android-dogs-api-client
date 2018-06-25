@@ -18,9 +18,9 @@ class DogImageListViewModel: ViewModel() {
         this.dogModel = dogModel
     }
 
-    fun loadDogImageList(): LiveData<List<DogImage>> {
+    fun loadDogImageList(dogBreed: String): LiveData<List<DogImage>> {
         dogModel
-                .loadDogImageList()
+                .loadDogImageList(dogBreed)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({ list ->

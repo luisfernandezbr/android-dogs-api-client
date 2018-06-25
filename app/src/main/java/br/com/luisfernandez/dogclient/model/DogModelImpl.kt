@@ -40,8 +40,8 @@ class DogModelImpl @Inject constructor(
         }
     }
 
-    override fun loadDogImageList(): Observable<List<DogImage>> {
-        return dogWebServiceApi.listDogImages("affenpinscher").map {
+    override fun loadDogImageList(dogBreed: String): Observable<List<DogImage>> {
+        return dogWebServiceApi.listDogImages(dogBreed).map {
             val jsonObject = JSONObject(it)
             val jsonArray = jsonObject.getJSONArray("message")
 

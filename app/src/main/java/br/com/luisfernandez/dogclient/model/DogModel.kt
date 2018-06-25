@@ -7,5 +7,5 @@ import io.reactivex.Observable
 
 interface DogModel {
     fun loadDogList(): Observable<List<Dog>>
-    fun loadDogImageList(): Observable<List<DogImage>>
+    fun loadDogImageList(dogBreed: String): Observable<List<DogImage>>
 }
