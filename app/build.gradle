@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
+apply plugin: "kotlin-kapt"
 apply plugin: 'kotlin-android-extensions'
+apply plugin: "kotlin-allopen"
 
 android {
     compileSdkVersion 27
@@ -34,4 +34,23 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.squareup.picasso:picasso:2.71828'
 
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:2.4.0"
+    implementation 'com.squareup.retrofit2:converter-scalars:2.4.0'
+
+    // OkHttp
+    implementation "com.squareup.okhttp3:okhttp:3.10.0"
+    implementation "com.squareup.okhttp3:logging-interceptor:3.10.0"
+
+    //Rx
+    implementation "com.squareup.retrofit2:adapter-rxjava2:2.4.0"
+    implementation "io.reactivex.rxjava2:rxjava:2.1.5"
+    implementation "io.reactivex.rxjava2:rxandroid:2.0.1"
+
+    // Dagger 2
+    kapt "com.google.dagger:dagger-compiler:2.11"
+    implementation "com.google.dagger:dagger:2.11"
+    kapt "com.google.dagger:dagger-android-processor:2.11"
+
+    implementation 'com.google.code.findbugs:jsr305:3.0.2'
 }
