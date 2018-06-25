@@ -25,8 +25,8 @@ class DogListViewModel: ViewModel() {
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({ list ->
-                    dogListLiveData.value = null
-                }, { throwable -> Log.e("", "Error retrieving InstallmentsList: ", throwable) })
+                    dogListLiveData.value = list
+                }, { throwable -> Log.e("", "Error retrieving List: ", throwable) })
 
 
 

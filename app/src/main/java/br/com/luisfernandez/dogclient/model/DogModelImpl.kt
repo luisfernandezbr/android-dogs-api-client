@@ -4,8 +4,14 @@ import android.util.Log
 import br.com.luisfernandez.dogclient.http.DogWebServiceApi
 import br.com.luisfernandez.dogclient.pojo.Dog
 import br.com.luisfernandez.dogclient.pojo.DogImage
+import com.google.gson.Gson
 import io.reactivex.Observable
 import javax.inject.Inject
+import com.google.gson.reflect.TypeToken
+import java.util.stream.Collectors.mapping
+import com.google.gson.JsonElement
+import org.json.JSONObject
+
 
 class DogModelImpl @Inject constructor(
         val dogWebServiceApi: DogWebServiceApi
@@ -20,20 +26,33 @@ class DogModelImpl @Inject constructor(
         list.add(Dog("akita"))
 
         return dogWebServiceApi.listDogs().map {
-            ArrayList<Dog>()
+            var jsonObject = JSONObject(it)
+            val jsonArray = jsonObject.getJSONArray("message")
+
+            var list = ArrayList<Dog>(jsonArray.length())
+
+            for (i in 0..(jsonArray.length() - 1)) {
+                val item = jsonArray.getString(i)
+                list.add(Dog(item))
+            }
+
+            list
         }
     }
 
     override fun loadDogImageList(): Observable<List<DogImage>> {
-        val list = ArrayList<DogImage>()
+        return dogWebServiceApi.listDogImages("affenpinscher").map {
+            val jsonObject = JSONObject(it)
+            val jsonArray = jsonObject.getJSONArray("message")
 
-        list.add(DogImage("https://images.dog.ceo/breeds/hound-afghan/n02088094_1003.jpg"))
-        list.add(DogImage("https://images.dog.ceo/breeds/hound-afghan/n02088094_1007.jpg"))
-        list.add(DogImage("https://images.dog.ceo/breeds/hound-afghan/n02088094_1023.jpg"))
-        list.add(DogImage("https://images.dog.ceo/breeds/hound-afghan/n02088094_10263.jpg"))
+            val list = ArrayList<DogImage>(jsonArray.length())
 
-        return dogWebServiceApi.listDogImages("").map {
-            ArrayList<DogImage>()
+            for (i in 0..(jsonArray.length() - 1)) {
+                val item = jsonArray.getString(i)
+                list.add(DogImage(item))
+            }
+
+            list
         }
     }
 }
